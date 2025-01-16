@@ -1,0 +1,16 @@
+{
+  "name": "finse",
+  "productName": "Finse",
+  "version": "0.1.0",
+  "description": "Comprehensive Personal Finance Manager",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Jack Martin",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^34.0.0",
+    "electron-window-state": "^5.0.3"
+  }
+}
