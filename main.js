@@ -6,6 +6,7 @@ const isDev = process.env.NODE_ENV === 'development';
 const isMac = process.platform === 'darwin';
 let mainWindow;
 
+// Build Main Window
 function createMainWindow() {
     const mainWindowState = windowStateKeeper({
         defaultHeight: 500,
@@ -25,10 +26,18 @@ function createMainWindow() {
     mainWindowState.manage(mainWindow);
 }
 
+// Launch App When Ready
 app.whenReady().then(() => {
     createMainWindow();
+
+    app.on('activate', () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createMainWindow();
+        }
+    });
 });
 
+// Quit App when Windows closed
 app.on('window-all-closed', () => {
     if (!isMac) {
         app.quit()
