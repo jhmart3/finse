@@ -5,7 +5,8 @@
   "description": "Comprehensive Personal Finance Manager",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "NODE_ENV=development electron .",
+    "build": "NODE_ENV=production electron-builder"
   },
   "author": "Jack Martin",
   "license": "MIT",
